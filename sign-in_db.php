@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "connect-db.php";
 $email = strip_tags(trim($_POST['email']));
 $pass = strip_tags(trim($_POST['pass']));

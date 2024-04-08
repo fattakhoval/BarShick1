@@ -157,11 +157,40 @@ footer ul a {
 }
 
 .createNewProduct {
-    padding: 30px;
-    height: 500px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     border: 3px solid black;
 
+}
+
+
+.product_all {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 30px 0 30px 0;
+    
+}
+
+.edit-prod_form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    border: 2px solid grey;
+}
+
+#btn_foot {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #01CCAC
+}
+
+.btn-primary {
+    background-color: #01CCAC
 }
