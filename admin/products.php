@@ -7,6 +7,8 @@ $cat_result = mysqli_fetch_all($query_cat);
 
 $query = mysqli_query($con, "SELECT * FROM `Product` INNER JOIN `Category` WHERE Product.Category_id= Category.Category_id ");
 $queryProducts = mysqli_fetch_all($query);
+
+include "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -21,15 +23,6 @@ $queryProducts = mysqli_fetch_all($query);
 </head>
 <body>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="">Категории</a></li>
-            <li><a href="">Заказы</a></li>
-            <li><a href="">Продукты</a></li>
-        </ul>
-    </nav>
-</header>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btn_foot">
