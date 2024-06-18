@@ -20,7 +20,7 @@ if(!empty($user1)){
     mysqli_query($con,"INSERT INTO `Users` (`Email`, `Password_hash`,`Bonus_points`)VALUES('$email', '$pass', '0')");
     // setcookie('user', $user1['user_id'], time() + 3600, "/");
 
-	$_SESSION["user_id"] = mysqli_insert_id($con);
+	$_SESSION["User_id"] = mysqli_insert_id($con);
 
     header('Location: account.php');
 }

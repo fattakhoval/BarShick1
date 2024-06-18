@@ -1,3 +1,10 @@
+<?php 
+require_once "connect-db.php";
+session_start();
+$query_product = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM `Product`"));
+var_dump($query_product);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +52,29 @@
         
     </nav>
         <div class="container_my">
-            <div class="card">
-                <img src="imges/product.png" alt="">
-                <p>fizz</p>
-                <button class="btn_my btn_buy">КУпить</button>
-            </div>
+            <?php  
+                foreach($query_product as $i=>$prod){
+                ?>
 
+                
+                <form action="cart-db.php" method="post">
+                                <div class="card">
+                                    <img src="imges/product.png" alt="">
+                                    <input hidden name="id_product" value="<?=$prod[0]?>"></input>
+                                    <input hidden name="price" value="<?=$prod[4]?>"></input>
+                                    <input hidden name="name_product" value="<?=$prod[1]?>"></input>
 
+                                    
+                                    <p name="price"><?=$prod[4]?></p>
+                                    <p name="name_product"><?=$prod[1]?></p>
+                                    <button class="btn_my btn_buy">КУпить</button>
+                                </div>
+                </form>
+                <?}
+                ?>
+           
+
+<!-- 
             <div class="card">
                 <img src="imges/product.png" alt="">
                 <p>fizz</p>
@@ -74,7 +97,7 @@
                 <img src="imges/product.png" alt="">
                 <p>fizz</p>
                 <button class="btn_my btn_buy">Купить</button>
-            </div>
+            </div> -->
         </div>
     </main>
 
