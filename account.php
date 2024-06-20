@@ -21,6 +21,13 @@ $order = mysqli_fetch_all($queryOrder);
 
 var_dump($order);
 
+$query_bonus = mysqli_query($con, "SELECT `Bonus_points` FROM `users` WHERE `User_id` = $user_id");
+
+if ($query_bonus) {
+    $result = mysqli_fetch_assoc($query_bonus);
+    $user_bonuses = $result['Bonus_points'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +66,7 @@ var_dump($order);
 
     </div>
 
+    <p>Количество бонусов: <?php echo $user_bonuses; ?></p>
 
     <h1>История заказов</h1> 
             <div class="cart_product"> 

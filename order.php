@@ -27,6 +27,8 @@ VALUES ('$id_user','$orderdate',
 'Оформлен','$totalPrice',
 '0','$bonus')");
 
+$updateBonuses = mysqli_query($con, "UPDATE `users` SET `Bonus_points` = `Bonus_points` + $bonus WHERE `User_id` = $id_user");
+
 if($query){
 
     $orser = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `Orders` ORDER BY Order_id DESC LIMIT 1"));
